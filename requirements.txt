@@ -1,0 +1,6 @@
+streamlit
+pandas
+openpyxl
+reportlab
+sqlite3
+or-tools

@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "description": "A comprehensive system for managing school timetables, including optimization, conflict detection, and export capabilities.",
+  "languages": [],
+  "frameworks": [],
+  "features": [],
+  "architecture": "",
+  "database": null,
+  "api_style": null,
+  "frontend": null,
+  "backend": null,
+  "dependencies": {},
+  "file_tree": [],
+  "tasks": [],
+  "notes": [],
+  "raw_architect_output": "{\n  \"project_name\": \"School Timetable Management System\",\n  \"description\": \"A comprehensive system for managing school timetables, including optimization, conflict detection, and export capabilities.\",\n  \"files\": [\n    {\n      \"name\": \"app.py\",\n      \"description\": \"Main application entry point.\",\n      \"dependencies\": [\"streamlit\", \"pandas\", \"openpyxl\", \"reportlab\", \"sqlite3\"]\n    },\n    {\n      \"name\": \"config/settings.py\",\n      \"description\": \"Configuration settings for the application.\",\n      \"dependencies\": []\n    },\n    {\n      \"name\": \"models/school.py\",\n      \"description\": \"Model for school data.\",\n      \"dependencies\": [\"pandas\"]\n    },\n    {\n      \"name\": \"models/teacher.py\",\n      \"description\": \"Model for teacher data.\",\n      \"dependencies\": [\"pandas\"]\n    },\n    {\n      \"name\": \"models/student_class.py\",\n      \"description\": \"Model for student class data.\",\n      \"dependencies\": [\"pandas\"]\n    },\n    {\n      \"name\": \"models/subject.py\",\n      \"description\": \"Model for subject data.\",\n      \"dependencies\": [\"pandas\"]\n    },\n    {\n      \"name\": \"models/room.py\",\n      \"description\": \"Model for room data.\",\n      \"dependencies\": [\"pandas\"]\n    },\n    {\n      \"name\": \"models/timetable.py\",\n      \"description\": \"Model for timetable data.\",\n      \"dependencies\": [\"pandas\"]\n    }\n  ]\n}"
+}

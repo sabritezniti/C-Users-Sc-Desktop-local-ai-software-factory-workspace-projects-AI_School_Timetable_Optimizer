@@ -1,0 +1,8 @@
+{
+  "id": "e335bea7-969",
+  "name": "AI School Timetable Optimizer",
+  "created_at": "2026-09-09T04:05:10.104221",
+  "status": "spec_ready",
+  "description": "# AI SCHOOL TIMETABLE OPTIMIZER\n\nBuild a complete, production-ready application that automatically generates optimized school timetables from an Excel file.\n\nThe user should simply upload an Excel fil",
+  "updated_at": "2026-09-09T04:14:34.839400"
+}
