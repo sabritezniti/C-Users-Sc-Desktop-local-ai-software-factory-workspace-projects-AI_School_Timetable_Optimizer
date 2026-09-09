@@ -92,3 +92,39 @@ README.md
 10. **AI Explanation Assistant**: Add an AI assistant to explain the optimization process and suggest improvements.
 
 By following these steps, you will have a fully functional AI school timetable optimizer application.
+
+## Error Handling: `NotFoundError: Failed to execute 'removeChild' on 'Node'`
+
+**Causes:**
+
+* **Désynchronisation entre React et le DOM :** React gère son propre arbre virtuel (Virtual DOM). Si un script tiers (comme Google Translate, une extension de navigateur ou un script externe) modifie le DOM directement en arrière-plan, React tente de supprimer un nœud qu'il pense être présent, mais qui n'existe plus ou a déplacé sa place.
+* **Problèmes de clés (`key`) dynamiques :** Lors du rendu de listes d'éléments, des clés mal configurées ou non uniques amènent parfois le framework à cibler le mauvais nœud lors des opérations d'effacement.
+* **Suppression multiple d'un même nœud :** Exécuter deux fois la méthode `.removeChild()` sur le même élément avant que l'affichage ne se mette à jour.
+
+**Solutions:**
+
+* **Côté utilisateur (Streamlit / Application Web):**
+  * **Désactiver Google Translate :** C'est la cause numéro un sur les frameworks comme React ou Streamlit. Désactivez la traduction automatique de la page dans votre navigateur.
+  * **Désactiver les extensions Chrome/Firefox :** Certaines extensions modifiant le DOM (bloqueurs de pubs, outils d'accessibilité) provoquent cette désynchronisation.
+  * **Rafraîchir la page ou vider le cache :** Cela réinitialise l'état de l'application frontend.
+
+* **Côté développeur (Code JavaScript):**
+  * **Vérifier l'appartenance avant la suppression (JS vanille) :**
+    ```javascript
+    if (parentElement.contains(childElement)) {
+      parentElement.removeChild(childElement);
+    }
+    ```
+  * **Utiliser la méthode plus moderne `.remove()` :**
+    ```javascript
+    // Ne nécessite pas de cibler explicitement le parent
+    childElement.remove();
+    ```
+  * **Envelopper l'action dans un bloc `try...catch` :**
+    ```javascript
+    try {
+      parentElement.removeChild(childElement);
+    } catch (e) {
+      console.warn("Nœud déjà supprimé ou introuvable:", e);
+    }
+    ```
