@@ -4,7 +4,6 @@ openpyxl
 reportlab
 or-tools
 domhandler
-lxml
 main
 ai_assistant
 dashboard
